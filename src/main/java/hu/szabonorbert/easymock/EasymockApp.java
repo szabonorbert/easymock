@@ -1,11 +1,12 @@
 package hu.szabonorbert.easymock;
+import hu.szabonorbert.easymock.model.Book;
+import hu.szabonorbert.easymock.service.BookDao;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-@SpringBootApplication
 public class EasymockApp {
     public static void main(String[] args) {
-        SpringApplication.run(EasymockApp.class, args);
+        BookDao bookshelf = new BookDao();
+        bookshelf.magicRejtoJenoing();
+        String list = bookshelf.listBooks();
+        System.out.println(list);
     }
 }
