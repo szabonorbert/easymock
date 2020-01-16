@@ -24,6 +24,15 @@ public class Salesman {
         this.bookShelf = bookShelf;
     }
 
+    public String listBooks(){
+        String ret = new String();
+        LinkedList<Book> books = bookShelf.listBooks();
+        for(Book b:books){
+            ret += b.toString() + "\n";
+        }
+        return ret;
+    }
+
     public String listBooksByAuthor(String author){
         String ret = new String();
         LinkedList<Book> books = bookShelf.listBooks();
@@ -61,7 +70,7 @@ public class Salesman {
     public boolean hasBook(Book book){
         LinkedList<Book> books = bookShelf.listBooks();
         for(Book b:books){
-            if (b.equals(book) return true;
+            if (b.equals(book)) return true;
         }
         return false;
     }
