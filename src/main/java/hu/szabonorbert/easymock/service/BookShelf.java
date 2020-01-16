@@ -1,11 +1,12 @@
 package hu.szabonorbert.easymock.service;
 import hu.szabonorbert.easymock.model.Book;
+import hu.szabonorbert.easymock.dao.BookDao;
 import java.util.LinkedList;
 
-public class BookDao {
+public class BookDaoImpl implements BookDao {
 
     LinkedList<Book> books;
-    public BookDao(){
+    public BookDaoImpl(){
         books = new LinkedList<Book>();
     }
 
