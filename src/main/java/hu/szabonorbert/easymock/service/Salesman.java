@@ -73,4 +73,8 @@ public class Salesman {
         }
         return null;
     }
+
+    public void getSomeBooksFromWarehouse(){
+        bookShelf.magicRejtoJenoing();
+    }
 }
