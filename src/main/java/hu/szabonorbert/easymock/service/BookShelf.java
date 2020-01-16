@@ -22,12 +22,8 @@ public class BookShelf implements BookDAO {
         if (id != -1) books.remove(id);
     }
 
-    public String listBooks(){
-        String ret = new String();
-        for(Book b:books){
-            ret += b.toString() + "\n";
-        }
-        return ret;
+    public LinkedList<Book> listBooks(){
+        return books;
     }
 
     public Book removeFirst(){
