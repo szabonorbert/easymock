@@ -23,8 +23,7 @@ public class SalesmanTest {
     @Before
     public void setUp(){
         bookshelf = EasyMock.niceMock(BookShelf.class);
-        this.salesman = new Salesman(bookshelf);
-
+        salesman = new Salesman(bookshelf);
     }
 
     @Test
@@ -32,16 +31,8 @@ public class SalesmanTest {
         LinkedList<Book> dummyDB = new LinkedList();
         dummyDB.add(new Book("Rejtő Jenő", "Az elveszett cirkáló", 1938));
         EasyMock.expect(bookshelf.listBooks()).andReturn(dummyDB);
-        EasyMock.replay();
+        EasyMock.replay(bookshelf);
 
-        LinkedList<Book> books = bookshelf.listBooks();
-        System.out.println(books.size());
-       // Assert.assertEquals(1, books.size());
-        /*Assert.assertThat(
-                books,
-                Matchers.contains(
-                        new Book("Apple", Arrays.asList(new Author("John", "Doe",null,null)))
-                )
-        );*/
+        Assert.assertEquals("Book{author='Rejtő Jenő', title='Az elveszett cirkáló', publishDate=1938}\n", salesman.listBooks());
     }
 }

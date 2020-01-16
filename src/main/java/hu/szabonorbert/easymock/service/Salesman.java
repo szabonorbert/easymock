@@ -13,7 +13,7 @@ public class Salesman {
     }
 
     public Salesman(){
-        bookShelf = new BookShelf();
+        this.bookShelf = new BookShelf();
     }
 
     public BookShelf getBookShelf() {
@@ -26,7 +26,7 @@ public class Salesman {
 
     public String listBooks(){
         String ret = new String();
-        LinkedList<Book> books = bookShelf.listBooks();
+        LinkedList<Book> books = this.bookShelf.listBooks();
         for(Book b:books){
             ret += b.toString() + "\n";
         }
@@ -35,7 +35,7 @@ public class Salesman {
 
     public String listBooksByAuthor(String author){
         String ret = new String();
-        LinkedList<Book> books = bookShelf.listBooks();
+        LinkedList<Book> books = this.bookShelf.listBooks();
         for(Book b:books){
             if (b.getAuthor().equals(author)) ret += b.toString() + "\n";
         }
@@ -44,7 +44,7 @@ public class Salesman {
 
     public String listBooksByDate(int date){
         String ret = new String();
-        LinkedList<Book> books = bookShelf.listBooks();
+        LinkedList<Book> books = this.bookShelf.listBooks();
         for(Book b:books){
             if (b.getPublishDate() == date) ret += b.toString() + "\n";
         }
@@ -52,7 +52,7 @@ public class Salesman {
     }
 
     public boolean hasBookByAuthor(String author){
-        LinkedList<Book> books = bookShelf.listBooks();
+        LinkedList<Book> books = this.bookShelf.listBooks();
         for(Book b:books){
             if (b.getAuthor().equals(author)) return true;
         }
@@ -60,7 +60,7 @@ public class Salesman {
     }
 
     public boolean hasBookByDate(int date){
-        LinkedList<Book> books = bookShelf.listBooks();
+        LinkedList<Book> books = this.bookShelf.listBooks();
         for(Book b:books){
             if (b.getPublishDate() == date) return true;
         }
@@ -68,7 +68,7 @@ public class Salesman {
     }
 
     public boolean hasBook(Book book){
-        LinkedList<Book> books = bookShelf.listBooks();
+        LinkedList<Book> books = this.bookShelf.listBooks();
         for(Book b:books){
             if (b.equals(book)) return true;
         }
@@ -77,13 +77,13 @@ public class Salesman {
 
     public Book getBook(Book b) {
         if (hasBook(b)){
-            bookShelf.removeBook(b);
+            this.bookShelf.removeBook(b);
             return b;
         }
         return null;
     }
 
     public void getSomeBooksFromWarehouse(){
-        bookShelf.magicRejtoJenoing();
+        this.bookShelf.magicRejtoJenoing();
     }
 }
