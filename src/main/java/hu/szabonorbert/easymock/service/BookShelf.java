@@ -35,7 +35,6 @@ public class BookShelf implements BookDAO {
     }
 
     public void magicRejtoJenoing(){
-        books.clear();
         addBook(new Book("Rejtő Jenő", "Az elveszett cirkáló", 1938));
         addBook(new Book("Rejtő Jenő", "A szőke ciklon", 1939));
         addBook(new Book("Rejtő Jenő", "Az előretolt helyőrség", 1939));
