@@ -32,6 +32,7 @@ public class SalesmanTest {
         dummyDB.add(new Book("Rejtő Jenő", "Az elveszett cirkáló", 1938));
         EasyMock.expect(bookshelf.listBooks()).andReturn(dummyDB);
         EasyMock.replay(bookshelf);
+
         Assert.assertEquals("Book{author='Rejtő Jenő', title='Az elveszett cirkáló', publishDate=1938}\n", salesman.listBooks());
     }
 
@@ -61,6 +62,18 @@ public class SalesmanTest {
 
     @Test
     public void testListBooksByAuthor3(){
+        LinkedList<Book> dummyDB = new LinkedList();
+        dummyDB.add(new Book("Rejtő Jenő", "Az elveszett cirkáló", 1938));
+        dummyDB.add(new Book("Rejtő Jenő", "Vesztegzár a Grand Hotelben", 1940));
+        dummyDB.add(new Book("Mihail Csehov", "A színészhez", 1997));
+        EasyMock.expect(bookshelf.listBooks()).andReturn(dummyDB);
+        EasyMock.replay(bookshelf);
+
+        Assert.assertEquals("Book{author='Mihail Csehov', title='A színészhez', publishDate=1997}\n", salesman.listBooksByDate(1997));
+    }
+
+    @Test
+    public void testListBooksByDate(){
         LinkedList<Book> dummyDB = new LinkedList();
         dummyDB.add(new Book("Rejtő Jenő", "Az elveszett cirkáló", 1938));
         dummyDB.add(new Book("Rejtő Jenő", "Vesztegzár a Grand Hotelben", 1940));
